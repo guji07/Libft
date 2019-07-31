@@ -171,7 +171,38 @@ char 	*ft_strncat(char *str1, char *str2, size_t count)
 		str1[i++] = str2[j];
 	return (str1);
 }
-char 	*ft_strlcpy(char *dst, const char *src, size_t size)
-{
 
+int		ft_isalpha(int ch)
+{
+	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+		return (1);
+	return (0);
 }
+
+int		ft_isdigit(int ch)
+{
+	if (ch >= '0' && ch <= '9')
+		return (1);
+	return (0);
+}
+
+int 	ft_isalnum(ch)
+{
+	return (ft_isalpha(ch) || ft_isdigit(ch));
+}
+
+int 	ft_isascii(int ch)
+{
+	if (ch >= 0 && ch <= 127)
+		return (1);
+	return (0);
+}
+
+int 	ft_isprint(int ch)
+{
+	if (ch >= 32 && ch <= 127)
+		return (1);
+	return (0);
+}
+
+int 	ft_toupper(int ch)
