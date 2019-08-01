@@ -172,6 +172,45 @@ char 	*ft_strncat(char *str1, char *str2, size_t count)
 	return (str1);
 }
 
+size_t  *ft_strlcat(char *dst, char *src, size_t count)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (dst[(i)] != '\0')
+        i++;
+    j = -1;
+    while (src[++j] && (count--))
+        dst[i++] = src[j];
+    dst[i] = '\0';
+    return (ft_strlen(dst));
+}
+
+char    *ft_strchr(char *string, int symbol)
+{
+    int i;
+
+    i = -1;
+    while (string[++i])
+        if (string[i] == symbol)
+            return (string + i);
+    return (0);
+}
+
+char    *strrchr(char *string, int symbol)
+{
+    int i;
+    char *point;
+
+    point = 0;
+    i = -1;
+    while (string[++i])
+        if (string[i] == symbol)
+            point = string + i;
+    return (point);
+}
+
 int		ft_isalpha(int ch)
 {
 	if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
@@ -206,3 +245,15 @@ int 	ft_isprint(int ch)
 }
 
 int 	ft_toupper(int ch)
+{
+    if (ch >= 'a' && ch <= 'z')
+        ch = ch - 32;
+    return (ch);
+}
+
+int     ft_tolower(int ch)
+{
+    if (ch >= 'A' && ch <= 'Z')
+        ch = ch + 32;
+    return (ch);
+}
