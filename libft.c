@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	int i;
 
 	i = 0;
-	while(sizeof(*s) * (i++) < n)
+	while((i++) < n)
 		((char*)s)[i - 1] = '\0';
 }
 
@@ -172,7 +172,7 @@ char 	*ft_strncat(char *str1, char *str2, size_t count)
 	return (str1);
 }
 
-size_t  *ft_strlcat(char *dst, char *src, size_t count)
+size_t  ft_strlcat(char *dst, char *src, size_t count)
 {
     int i;
     int j;
@@ -184,7 +184,7 @@ size_t  *ft_strlcat(char *dst, char *src, size_t count)
     while (src[++j] && (count--))
         dst[i++] = src[j];
     dst[i] = '\0';
-    return (ft_strlen(dst));
+    return ((size_t)ft_strlen(dst));
 }
 
 char    *ft_strchr(char *string, int symbol)
@@ -198,7 +198,7 @@ char    *ft_strchr(char *string, int symbol)
     return (0);
 }
 
-char    *strrchr(char *string, int symbol)
+char    *ft_strrchr(char *string, int symbol)
 {
     int i;
     char *point;
@@ -209,6 +209,29 @@ char    *strrchr(char *string, int symbol)
         if (string[i] == symbol)
             point = string + i;
     return (point);
+}
+
+char 	*ft_strnstr (char *str, char *to_find, size_t len)
+{
+    int i;
+    int n;
+
+    if (*to_find == '\0')
+        return (str);
+    i = 0;
+    while (*(str + i) != '\0')
+    {
+        n = 0;
+        while ((*(to_find + n)) != '\0')
+        {
+            if (*(str + i + n) != *(to_find + n))
+                break;
+        }
+        if (*(to_find + n) == '\0')
+            return (str + i);
+        i++;
+    }
+    return (NULL);
 }
 
 int		ft_isalpha(int ch)
