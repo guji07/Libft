@@ -474,14 +474,14 @@ char 	*ft_strtrim(char const *s)
 		str[j] = '\0';
 	}
 	return (str);
-} //ok
+}
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-} //ok
+}
 
-void	ft_putstr(char const *s) //ok
+void	ft_putstr(char const *s)
 {
 	int i;
 
@@ -494,4 +494,74 @@ void	ft_putendl(char const *s)
 {
 	ft_putstr(s);
 	ft_putchar('\n');
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+void	ft_putstr_fd(char const *s, int fd)
+{
+	int i;
+
+	i = -1;
+	while (s[--i])
+	{
+		ft_putchar_fd(s[i], fd);
+	}
+	ft_putchar_fd('\0', fd);
+}
+
+void	ft_putendl_fd(char const *s, int fd)
+{
+	int i;
+
+	i = -1;
+	while (s[--i])
+	{
+		ft_putchar_fd(s[i], fd);
+	}
+	ft_putchar_fd('\n', fd);
+	ft_putchar_fd('\0', fd);
+}
+
+void	ft_screen_fd(int nb, int fd)
+{
+	int div;
+	int n;
+
+	n = 1;
+	div = 1;
+	while (div <= nb / 10)
+	{
+		n++;
+		div = div * 10;
+	}
+	while (n > 0)
+	{
+		ft_putchar_fd('0' + (nb / div), fd);
+		nb = nb % div;
+		div = div / 10;
+		n--;
+	}
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if ((ft_whtnbr(n)) == 0)
+		ft_screen_fd(n, fd);
+	else if ((ft_whtnbr(n)) == 1)
+	{
+		ft_putchar_fd('-', fd);
+		n = n * (-1);
+		ft_screen_fd(n, fd);
+	}
+	else if ((ft_whtnbr(n)) == 2)
+	{
+		ft_putchar_fd('-', fd);
+		n = n / 10;
+		ft_screen_fd(-n, fd);
+		ft_putchar_fd('8', fd);
+	}
 }
