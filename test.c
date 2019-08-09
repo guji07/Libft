@@ -6,7 +6,6 @@
 int     main(void)
 {
 	char s1[6] = "1234";
-    char const s2[101] = "\n\t 12\t\t   34    \n\t  \n";
-    printf("ft_strtrim: {%s}", ft_strtrim(s2));
+    char const s2[101] = "123 \t 342432 23231 bgf sdf";
 	return (0);
 }
