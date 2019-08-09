@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 22:01:46 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/07/09 22:21:41 by tgarkbit         ###   ########.fr       */
+/*   Created: 2019/07/08 16:00:51 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/07/09 19:04:31 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	char *f;
+#include "../libft.h"
 
-	f = (s2 + n);
-	while ((*s1 != '\0' || *s2 != '\0') && (s2 < f))
+int		ft_atoi(char *str)
+{
+	int z;
+	int sum;
+
+	z = 1;
+	sum = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' ||
+	*str == '\v' || *str == '\a' || *str == '\r')
+		str++;
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
 	{
-		if (*s1 != *s1)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
+		z = -1;
+		str++;
 	}
-	return (*s1 - *s2);
+	while ((*str >= '0') && (*str <= '9'))
+	{
+		sum = (sum * 10) + (*str - '0');
+		str++;
+	}
+	return (z * sum);
 }
