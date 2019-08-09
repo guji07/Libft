@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_screen(int nb)
+static void	ft_screen(int nb)
 {
 	int div;
 	int n;
