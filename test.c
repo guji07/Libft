@@ -4,11 +4,13 @@
 #include <stdlib.h>
 #include "libft.h"
 
-
-int     main(void)
+int     		main(void)
 {
-	printf("[%s]", (ft_strsplit("abc2bvf\n", 'b'))[0]);
-	printf("[%s]", (ft_strsplit("abc2bvf\n", 'b'))[1]);
-	printf("[%s]", (ft_strsplit("abc2bvf\n", 'b'))[2]);
+	int i = 0;
+	for (i = 0; i < 5; i++)
+		printf("[%s]\n", (ft_strsplit("123D321D123  \t\nD33 3Jaj", 'D'))[i]);
+	printf("\nS D v nachale:\n");
+	for (i = 0; i < 5; i++)
+		printf("[%s]\n", (ft_strsplit("123D321D123  \t\nD33 3Jaj", 'D'))[i]);
 	return (0);
 }

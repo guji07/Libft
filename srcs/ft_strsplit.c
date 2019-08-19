@@ -34,19 +34,19 @@ char			**ft_strsplit(char const *s, char c)
 	int		j;
 	int		n;
 
-	arr = (char**)malloc(sizeof(char*) * ft_words_count((char*)s, c));
+	arr = (char**)malloc(sizeof(char*) * ft_words_count((char*)s, c) + 1);
 	i = -1;
 	j = -1;
 	while (s[++i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c || (i == 0 && s[i] != c))
 		{
 			while (s[i] == c)
 				i++;
 			arr[++j] = (char*)malloc(sizeof(char) * ft_word_len(s + i, c));
 			n = -1;
-			while (s[++i] != c && s[i] != '\0')
-				arr[j][++n] = s[i];
+			while (s[i] != c && s[i] != '\0')
+				arr[j][++n] = s[i++];
 			arr[j][++n] = '\0';
 			i--;
 		}
