@@ -16,7 +16,7 @@ char	*ft_strcpy(char *destptr, const char *srcptr);
 char	*ft_strncpy( char * destptr, const char * srcptr, size_t num);
 char	*ft_strcat(char *str1, char *str2);
 char 	*ft_strncat(char *str1, char *str2, size_t count);
-size_t  ft_strlcat(char *dst, char *src, size_t count);
+size_t 	ft_strlcat(char *dst, char *src, size_t count);
 char    *ft_strchr(char *string, int symbol);
 char    *ft_strrchr(char *string, int symbol);
 char    *ft_strstr(char *str, char *to_find);
@@ -32,7 +32,7 @@ int 	ft_isprint(int ch);
 int 	ft_toupper(int ch);
 int     ft_tolower(int ch);
 
-//из первой части все готовы
+
 
 void    *ft_memalloc(size_t size);
 void    ft_memdel(void **ap);
@@ -48,8 +48,8 @@ int 	ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char 	*ft_strtrim(char const *s);
-char	**ft_split_whitespaces(char *str);
-//ft_strsplit , ft_itoa ,
+char	*ft_itoa(int n);
+char	**ft_strsplit(char const *s, char c);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
@@ -57,5 +57,5 @@ void	ft_putnbr(int nb);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
-
+void	ft_putnbr_fd(int n, int fd);
 #endif

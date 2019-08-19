@@ -5,6 +5,6 @@ void	ft_bzero(void *s, size_t n)
 	int i;
 
 	i = 0;
-	while((i++) < n)
+	while((i++) < (int)n)
 		((char*)s)[i - 1] = '\0';
 }

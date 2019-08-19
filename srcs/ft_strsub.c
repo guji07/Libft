@@ -8,7 +8,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if ((str = (char*)malloc(len + 1)))
 	{
 		i = start - 1;
-		while (++i < start + len)
+		while (++i < (int)(start + len))
 			str[i - start] = s[i];
 		str[i] = '\0';
 	}

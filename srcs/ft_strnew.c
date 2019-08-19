@@ -8,7 +8,7 @@ char	*ft_strnew(size_t size)
 	i = 0;
 	if ((str = malloc(size)))
 	{
-		while (i < size)
+		while (i < (int)size)
 		{
 			str[i] = '\0';
 			i++;

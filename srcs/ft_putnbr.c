@@ -16,6 +16,7 @@ static	int		ft_whtnbr(int num)
 {
 	int i;
 
+	i = 0;
 	if (num > 0)
 		i = 0;
 	if ((num < 0) && (num > (-2147483648)))

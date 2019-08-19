@@ -8,7 +8,7 @@ void	*ft_memmove (void *destination, void *source, size_t n)
 	if ((copy = (char*)malloc(sizeof(char) * n + 1)) != NULL)
 	{
 		i = 0;
-		while ((i) < n && ((char *)source)[i] != '\0')
+		while ((i) < (int)(n) && ((char *)source)[i] != '\0')
 		{
 			copy[i] = ((char *) source)[i];
 			i++;
