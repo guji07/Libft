@@ -1,9 +1,9 @@
 #include "../libft.h"
 
-char 	*ft_strcat(char *str1, char *str2)
+char	*ft_strcat(char *str1, const char *str2)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;

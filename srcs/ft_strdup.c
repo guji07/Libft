@@ -1,9 +1,9 @@
 #include "../libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *str)
 {
-	char *cpy;
-	int i;
+	char	*cpy;
+	int		i;
 
 	i = -1;
 	if ((cpy = (char*)malloc(sizeof(char) * ft_strlen(str) + 1)))

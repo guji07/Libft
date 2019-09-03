@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-void	*ft_memchr (void *arr, int c, size_t n)
+void	*ft_memchr (const void *arr, int c, size_t n)
 {
 	int i;
 

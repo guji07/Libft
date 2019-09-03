@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-char	*ft_strrchr(char *string, int symbol)
+char	*ft_strrchr(const char *string, int symbol)
 {
 	int i;
 	char *point;

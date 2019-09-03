@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-void	*ft_memmove (void *destination, void *source, size_t n)
+void	*ft_memmove (void *destination, const void *source, size_t n)
 {
 	char *copy;
 	int i;

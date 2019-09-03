@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strstr(const char *str, const char *to_find)
 {
 	int i;
 	int n;
@@ -29,7 +29,7 @@ char	*ft_strstr(char *str, char *to_find)
 				break ;
 		}
 		if (*(to_find + n) == '\0')
-			return (str + i);
+			return (char *)(str + i);
 		i++;
 	}
 	return (0);
