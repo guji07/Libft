@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/04 14:00:54 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/04 14:31:51 by tgarkbit         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
 static	int		ft_words_count(const char *s, char c)
 {
-	int i;
-	int n;
+	int		i;
+	int		n;
 
 	n = 1;
 	i = -1;
@@ -17,9 +29,9 @@ static	int		ft_words_count(const char *s, char c)
 	return (n);
 }
 
-static	int 	ft_word_len(const char *s, char c)
+static	int		ft_word_len(const char *s, char c)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (s[i] == c && s[i])

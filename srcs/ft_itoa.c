@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/04 13:59:03 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/04 14:07:06 by tgarkbit         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
-static	void 	ft_positive(char *str, int n)
+static	void	ft_positive(char *str, int n)
 {
 	int	i;
-
 	int div;
+
 	div = 1000000000;
 	if (n == 0)
 	{
 		str[0] = '0';
 		str[1] = '\0';
-		return;
+		return ;
 	}
 	i = -1;
-	while (!(n/div))
+	while (!(n / div))
 		div = div / 10;
 	while (div > 0)
 	{
@@ -30,7 +42,7 @@ char			*ft_itoa(int n)
 
 	if ((str = (char*)malloc(12 * sizeof(char))))
 	{
-		if (n ==  -2147483648)
+		if (n == -2147483648)
 			str = "-2147483648\0";
 		else if (n < 0)
 		{

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/04 14:11:26 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/04 14:11:59 by tgarkbit         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
-char 	*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
-	int i;
-	int n;
-	char *str;
-	int j;
+	int		i;
+	int		n;
+	char	*str;
+	int		j;
 
 	j = 0;
 	i = 0;

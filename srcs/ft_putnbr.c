@@ -6,13 +6,13 @@
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 13:39:02 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/07/09 14:48:59 by tgarkbit         ###   ########.fr       */
+/*   Updated: 2019/09/04 14:25:52 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static	int		ft_whtnbr(int num)
+static		int		ft_whtnbr(int num)
 {
 	int i;
 
@@ -26,7 +26,7 @@ static	int		ft_whtnbr(int num)
 	return (i);
 }
 
-static void	ft_screen(int nb)
+static		void	ft_screen(int nb)
 {
 	int div;
 	int n;
@@ -47,7 +47,7 @@ static void	ft_screen(int nb)
 	}
 }
 
-void	ft_putnbr(int nb)
+void				ft_putnbr(int nb)
 {
 	if ((ft_whtnbr(nb)) == 0)
 		ft_screen(nb);

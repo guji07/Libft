@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/04 14:20:58 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/04 14:23:04 by tgarkbit         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int 	n;
+	int		n;
 	char	*str;
 	int		i;
 
@@ -15,5 +27,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		while (s2[++i])
 			str[i] = s2[i];
 	}
-	return(str);
+	return (str);
 }
