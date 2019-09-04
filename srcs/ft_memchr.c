@@ -23,5 +23,7 @@ void	*ft_memchr(const void *arr, int c, size_t n)
 			return (void *)(arr + i);
 		i++;
 	}
+	if ((size_t)i <= n && c == '\0')
+		return (void *)(arr + i);
 	return (NULL);
 }

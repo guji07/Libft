@@ -6,7 +6,7 @@
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 14:00:38 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/09/04 14:07:26 by tgarkbit         ###   ########.fr       */
+/*   Updated: 2019/09/04 16:34:15 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	int i;
 
 	i = 0;
-	while (sizeof(*s) * (++i) < n)
+	while (sizeof(*s) * (++i) <= n)
 	{
 		((char*)s)[i - 1] = (char)c;
 	}

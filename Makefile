@@ -11,4 +11,4 @@ clean:
 	rm -f $(OBJECTS)
 fclean: clean
 	rm -f $(NAME)
-re: clean all
+re:	fclean all
