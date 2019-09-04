@@ -51,6 +51,6 @@ char			**ft_strsplit(char const *s, char c)
 			i--;
 		}
 	}
-	arr[++j] = '\0';
+	arr[++j] = (char *)('\0');
 	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 16:54:14 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/07/09 21:42:05 by tgarkbit         ###   ########.fr       */
+/*   Updated: 2019/09/04 13:02:33 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strstr(const char *str, const char *to_find)
 	int n;
 
 	if ((*to_find) == '\0')
-		return (str);
+		return (char *)(str);
 	i = 0;
 	while ((*(str + i) != '\0'))
 	{
