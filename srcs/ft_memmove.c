@@ -19,7 +19,8 @@ void	*ft_memmove(void *destination, const void *source, size_t n)
 
 	if (destination == NULL && source == NULL)
 		return (NULL);
-	if (((copy = (unsigned char*)malloc(sizeof(unsigned char) * n + 1)) != NULL) && n != 0)
+	if (((copy = (unsigned char*)
+			malloc(sizeof(unsigned char) * n + 1)) != NULL) && n != 0)
 	{
 		i = 0;
 		while ((i) < (int)(n) && ((unsigned char *)source)[i] != '\0')

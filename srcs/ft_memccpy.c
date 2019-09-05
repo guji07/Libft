@@ -12,7 +12,8 @@
 
 #include "../libft.h"
 
-void	*ft_memccpy(void *dest, const void *source, unsigned char ch, size_t count)
+void	*ft_memccpy(void *dest, const void *source,
+		unsigned char ch, size_t count)
 {
 	int i;
 
