@@ -19,7 +19,7 @@
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *source, int ch, size_t count);
+void	*ft_memccpy(void *dest, const void *source, unsigned char ch, size_t count);
 void	*ft_memmove(void *destination, const void *source, size_t n);
 void	*ft_memchr(const void *arr, int c, size_t n);
 int		ft_memcmp(const void *buf1, const void *buf2, size_t count);

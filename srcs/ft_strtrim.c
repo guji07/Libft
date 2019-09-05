@@ -21,14 +21,14 @@ char	*ft_strtrim(char const *s)
 
 	j = 0;
 	i = 0;
-	n = ft_strlen(s) - 1;
-	if ((str = (char*)malloc(n + 2)))
+	while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
+		i++;
+	n = ft_strlen(s + i);
+	while (s[n] == '\t' || s[n] == ' ' || s[n] == '\n')
+		n--;
+	i--;
+	if ((str = (char*)malloc(n + 1)))
 	{
-		while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
-			i++;
-		while (s[n] == '\t' || s[n] == ' ' || s[n] == '\n')
-			n--;
-		i--;
 		while (++i <= n)
 		{
 			str[j] = s[i];

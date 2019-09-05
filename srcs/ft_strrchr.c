@@ -22,5 +22,7 @@ char	*ft_strrchr(const char *string, int symbol)
 	while (string[++i])
 		if (string[i] == symbol)
 			point = (char *)(string + i);
+	if (symbol == '\0' && string[i] == '\0')
+		return (point);
 	return (point);
 }

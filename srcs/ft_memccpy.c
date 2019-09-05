@@ -12,17 +12,17 @@
 
 #include "../libft.h"
 
-void	*ft_memccpy(void *dest, const void *source, int ch, size_t count)
+void	*ft_memccpy(void *dest, const void *source, unsigned char ch, size_t count)
 {
 	int i;
 
 	i = -1;
-	while (((char*)source)[++i] && (i < (int)count))
+	while (((char*)source)[++i] && (i < ((int)count - 1)))
 	{
-		if ((((int)(((char*)dest)[i] = ((char*)(source))[i])) == ch))
+		((char*)dest)[i] = ((char*)source)[i];
+		if (((char*)dest)[i] == (char)ch)
 		{
-			((char*)dest)[i] = '\0';
-			return ((char*)(dest) + i);
+			return ((char*)(dest) + i + 1);
 		}
 	}
 	return (NULL);
