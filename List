@@ -1,0 +1,122 @@
+1.ft_memccpy: [OK] [FAILED] [FAILED] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+[fail]: your memccpy doesn't cast the memory into unsigned char
+[fail]: your memccpy doesn't cast the stop-character into unsigned char
+[fail]: your memccpy's return is false/doesn't work with basic params
+
+2.ft_memmove: [OK] [CRASH] [FAILED] [OK] [OK] [OK] [OK] [OK] [CRASH] [OK] [OK] [CRASH] [CRASH] [OK]
+[crash]: your memmove's return is false/does not work with basic input
+[fail]: your memmove does not work with \0 and others unsigned char codes
+[crash]: your memmove crash because it read too many bytes or attempt to read on dst !
+[crash]: your memmove does not well with NULL as both parameters
+[crash]: your memmove does not well with NULL as both parameters and size
+
+
+3.ft_memcmp: [OK] [OK] [OK] [FAILED] [FAILED] [FAILED] [FAILED] [OK] [OK] [OK]
+[fail]: your memcmp does not work with basic input
+[fail]: your memcmp does not cast the memory in unsigned char
+[fail]: your memcmp stop at \0
+[fail]: your memcmp does not work with basic input
+
+
+4.ft_strncpy: [OK] [OK] [OK] [FAILED] [OK] [FAILED] [FAILED] [OK] [OK] [OK] [OK]
+[fail]: your strncpy does not work with an empty string
+[fail]: your strncpy does not fill with \0 the rest of the dest buffer
+[fail]: your strncpy put the bad number of \0 at the end of the string
+
+5.ft_strncat: [OK] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK]
+[fail]: your strncat does not set a \0 to the end
+
+6.ft_strlcat: [FAILED] [FAILED] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK]
+[fail]: your strlcat does not work with basic input
+[fail]: your strlcat does not work with basic input
+[fail]: your strlcat does not work with basic input
+[fail]: your strlcat return value is false
+
+7.ft_strrchr: [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK]
+[fail]: your strrchr does not work with \0
+
+8.ft_strstr: [OK] [TIMEOUT] [TIMEOUT] [OK] [TIMEOUT] [TIMEOUT] [OK] [OK] [OK] [OK] [TIMEOUT] [OK] [TIMEOUT] [OK] [OK]
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+
+9.ft_strnstr: [TIMEOUT] [OK] [TIMEOUT] [TIMEOUT] [OK] [OK] [OK] [OK] [OK] [TIMEOUT] [TIMEOUT] [TIMEOUT] [OK] [OK]
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+[timeout]: see the log file for informations
+
+10.ft_strcmp: [OK] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [FAILED] [OK] [OK] [OK]
+[fail]: your strcmp does not cast in unsigned the diff
+[fail]: your strcmp does not work with non ascii chars
+
+11.ft_strncmp: [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [FAILED] [OK] [OK] [OK]
+[fail]: your strncmp does not cast in unsigned char the diff
+[fail]: your strncmp does not work with non ascii chars
+
+12.ft_atoi: [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [KO] [KO] [OK]
+[KO]: your atoi does not work with over long max value
+[KO]: your atoi does not work with over long min value
+
+In this part, you can choose to protect your function or not to,
+a color code will tell you if your function is protected/not BUT stay coherent !
+[M-^_M-^[° ] —> protected
+[M-^_M-^R• ] —> not protected
+Second part
+__)(__ __)(__ __)(__ __)(__ __)(__ __)(__ __)(__ __)
+(______)(______)(______)(______)(______)(______)(______)(___
+
+ft_memdel: [OK] [OK] [M-^_M-^R• ]
+13.ft_strnew: [OK] [OK] [FAILED] [OK]
+[fail]: your strnew did not allocate the good size so the \0 test can be false
+
+ft_strdel: [OK] [OK] [M-^_M-^R• ]
+ft_strclr: [OK] [M-^_M-^R• ]
+ft_striter: [OK] [OK] [M-^_M-^R• ]
+ft_striteri: [OK] [OK] [M-^_M-^R• ]
+ft_strmap: [OK] [OK] [OK] [OK] [OK] [M-^_M-^R• ]
+ft_strmapi: [OK] [OK] [OK] [OK] [OK] [M-^_M-^R• ]
+ft_strequ: [OK] [OK] [OK] [OK] [M-^_M-^R• ]
+ft_strnequ: [OK] [FAILED] [FAILED] [OK] [M-^_M-^R• ]
+[fail]: your strnequ does not work with empty string
+[fail]: your strnequ does not work with empty string
+
+14. ft_strsub: [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] [M-^_M-^R• ]
+[fail]: your strsub does not set \0 to the end of the string
+
+15.ft_strjoin: [FAILED] [FAILED] [FAILED] [OK] [FAILED] [M-^_M-^R• ]
+[fail]: your strjoin does not work with basic input
+[fail]: your strjoin does not allocate the memory
+[fail]: your strjoin does not work with overlap input
+[fail]: your strjoin does not set \0 to the end of the string
+
+16.ft_strtrim: [OK] [OK] [OK] [OK] [OK] [KO] [OK] [OK] [OK] [M-^_M-^R• ]
+[KO]: your strtrim did not allocate the good size so the \0 test may be false
+
+17.ft_strsplit: [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [CRASH] [CRASH] [M-^_M-^R• ]
+[crash]: your strsplit does not work with basic input
+[crash]: you did not protect your strsplit
+[crash]: your strsplit does not work with basic input
+
+18.ft_itoa: [OK] [OK] [OK] [OK] [OK] [OK] [KO] [KO] [CRASH]
+[KO]: your itoa does not allocate the good size so the \0 test may be false
+[KO]: your itoa does not allocate the good size so the \0 test may be false
+[crash]: your itoa did not allocate memory for the int min value
+
+ft_putstr: [OK] [OK] [M-^_M-^R• ]
+ft_putendl: [OK] [OK] [M-^_M-^R• ]
+19.ft_putchar_fd: [OK] [OK] [KO]
+[KO]: your putchar_fd does not work with unicode
+
+20.ft_putstr_fd: [FAILED] [FAILED] [M-^_M-^R• ]
+[fail]: your putstr_fd does not work with basic input
+[fail]: your putstr_fd does not work with non ascii chars
+
+21.ft_putendl_fd: [FAILED] [FAILED] [M-^_M-^R• ]
+[fail]: your putendl_fd does not work with basic input
+[fail]: your putendl_fd does not work with non ascii chars
