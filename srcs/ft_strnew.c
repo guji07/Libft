@@ -18,14 +18,16 @@ char	*ft_strnew(size_t size)
 	int		i;
 
 	i = 0;
-	if ((str = malloc(size)))
+	if ((str = malloc((int)size + 1)))
 	{
-		while (i < (int)size)
+		while (i < (int)size + 1)
 		{
 			str[i] = '\0';
 			i++;
 		}
 		return (str);
 	}
+	else
+		free(str);
 	return (NULL);
 }

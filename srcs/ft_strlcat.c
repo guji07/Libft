@@ -16,13 +16,18 @@ size_t		ft_strlcat(char *str1, const char *str2, size_t count)
 {
 	int		i;
 	int		j;
+	int 	n;
 
+	n = ft_strlen(str1);
 	i = 0;
 	j = -1;
-	while (str1[i])
+	while (str1[i] && i < (int)count)
 		i++;
-	while (str2[++j] && j < (int)count - 1)
+	while (str2[++j] && i < (int)count - 1)
 		str1[i++] = str2[j];
-	str1[i] = '\0';
-	return ((size_t)ft_strlen(str1));
+	if (i > n)
+		str1[i] = '\0';
+	if ((int)count < n)
+		return (n + count);
+	return (size_t)((ft_strlen(str2) + n));
 }
