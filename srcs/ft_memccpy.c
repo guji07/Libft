@@ -18,7 +18,7 @@ void	*ft_memccpy(void *dest, const void *source,
 	int i;
 
 	i = -1;
-	while (((char*)source)[++i] && (i < ((int)count - 1)))
+	while (++i < ((int)count))
 	{
 		((char*)dest)[i] = ((char*)source)[i];
 		if (((char*)dest)[i] == (char)ch)

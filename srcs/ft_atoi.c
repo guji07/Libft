@@ -16,19 +16,18 @@ int		ft_atoi(const char *str)
 {
 	int		z;
 	int		sum;
+	int 	n;
 
+	n = 1;
 	z = 1;
 	sum = 0;
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' ||
 	*str == '\v' || *str == '\a' || *str == '\r')
 		str++;
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
-	{
+	if (*str == '-')
 		z = -1;
+	if (*str == '+' || *str == '-')
 		str++;
-	}
 	while ((*str >= '0') && (*str <= '9'))
 	{
 		sum = (sum * 10) + (*str - '0');

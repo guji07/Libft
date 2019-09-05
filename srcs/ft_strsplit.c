@@ -46,7 +46,11 @@ char			**ft_strsplit(char const *s, char c)
 	int		j;
 	int		n;
 
-	arr = (char**)malloc(sizeof(char*) * ft_words_count((char*)s, c) + 1);
+	if (!(arr = (char**)malloc(sizeof(char*) * ft_words_count((char*)s, c) + 1)))
+	{
+		free(arr);
+		return (NULL);
+	}
 	i = -1;
 	j = -1;
 	while (s[++i] != '\0')
