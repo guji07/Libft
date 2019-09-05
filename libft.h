@@ -29,7 +29,7 @@ char	*ft_strcpy(char *destptr, const char *srcptr);
 char	*ft_strncpy(char *destptr, const char *srcptr, size_t num);
 char	*ft_strcat(char *str1, const char *str2);
 char	*ft_strncat(char *str1, const char *str2, size_t count);
-size_t	ft_strlcat(char *dst, char *src, size_t count);
+size_t	ft_strlcat(char *str1, const char *str2, size_t count);
 char	*ft_strchr(const char *string, int symbol);
 char	*ft_strrchr(const char *string, int symbol);
 char	*ft_strstr(const char *str, const char *to_find);

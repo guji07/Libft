@@ -40,10 +40,10 @@ char			*ft_itoa(int n)
 {
 	char *str;
 
-	if ((str = (char*)malloc(12 * sizeof(char))))
+	if ((str = (char*)malloc(12)))
 	{
 		if (n == -2147483648)
-			str = "-2147483648\0";
+			str = "-2147483648";
 		else if (n < 0)
 		{
 			str[0] = '-';
@@ -53,5 +53,7 @@ char			*ft_itoa(int n)
 		else
 			ft_positive(str, n);
 	}
+	else
+		return 0;
 	return (str);
 }

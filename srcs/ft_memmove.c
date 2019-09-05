@@ -22,15 +22,12 @@ void	*ft_memmove(void *destination, const void *source, size_t n)
 	if (((copy = (unsigned char*)
 			malloc(sizeof(unsigned char) * n + 1)) != NULL) && n != 0)
 	{
-		i = 0;
-		while ((i) < (int)(n) && ((unsigned char *)source)[i] != '\0')
-		{
+		i = -1;
+		while ((++i) < (int)(n))
 			copy[i] = ((unsigned char *)source)[i];
-			i++;
-		}
 		copy[i] = '\0';
 		i = -1;
-		while (copy[++i])
+		while ((++i) < (int)(n))
 			((unsigned char *)destination)[i] = copy[i];
 		((unsigned char*)destination)[i] = '\0';
 	}

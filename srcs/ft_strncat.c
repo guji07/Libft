@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *str1, const char *str2, size_t count)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = -1;
@@ -23,6 +23,6 @@ char	*ft_strncat(char *str1, const char *str2, size_t count)
 		i++;
 	while (str2[++j] && j < (int)count)
 		str1[i++] = str2[j];
-	str1[j] = '\0';
+	str1[i] = '\0';
 	return (str1);
 }

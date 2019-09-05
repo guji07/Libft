@@ -12,17 +12,17 @@
 
 #include "../libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t count)
+size_t		ft_strlcat(char *str1, const char *str2, size_t count)
 {
 	int		i;
 	int		j;
 
 	i = 0;
-	while (dst[i] != '\0')
-		i++;
 	j = -1;
-	while (src[++j] && (count--))
-		dst[i++] = src[j];
-	dst[i] = '\0';
-	return ((size_t)ft_strlen(dst));
+	while (str1[i])
+		i++;
+	while (str2[++j] && j < (int)count - 1)
+		str1[i++] = str2[j];
+	str1[i] = '\0';
+	return ((size_t)ft_strlen(str1));
 }
