@@ -12,32 +12,6 @@
 
 #include "../libft.h"
 
-/*char	*ft_strtrim(char const *s)
-{
-	int		i;
-	int		n;
-	char	*str;
-	int		j;
-
-	j = 0;
-	i = 0;
-	while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
-		i++;
-	n = ft_strlen(s + i);
-	while (s[n + i] == '\t' || s[n + i] == ' ' || s[n + i] == '\n')
-		n--;
-	i--;
-	if ((str = (char*)malloc(n + 1)))
-	{
-		while (++i <= n)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		str[j + 1] = '\0';
-	}
-	return (str);
-}*/
 char	*ft_strtrim(char const *s)
 {
 	int		i;
