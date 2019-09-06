@@ -12,7 +12,7 @@
 
 #include "../libft.h"
 
-char	*ft_strtrim(char const *s)
+/*char	*ft_strtrim(char const *s)
 {
 	int		i;
 	int		n;
@@ -24,7 +24,7 @@ char	*ft_strtrim(char const *s)
 	while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
 		i++;
 	n = ft_strlen(s + i);
-	while (s[n] == '\t' || s[n] == ' ' || s[n] == '\n')
+	while (s[n + i] == '\t' || s[n + i] == ' ' || s[n + i] == '\n')
 		n--;
 	i--;
 	if ((str = (char*)malloc(n + 1)))
@@ -34,7 +34,41 @@ char	*ft_strtrim(char const *s)
 			str[j] = s[i];
 			j++;
 		}
-		str[j] = '\0';
+		str[j + 1] = '\0';
+	}
+	return (str);
+}*/
+char	*ft_strtrim(char const *s)
+{
+	int		i;
+	int		n;
+	char	*str;
+	int		j;
+
+	j = 0;
+	i = 0;
+	n = ft_strlen(s);
+	if (!s)
+		return (0);
+	str = (char*)malloc(n + 1);
+	if (str)
+	{
+		while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
+			i++;
+		while (s[n - 1] == '\t' || s[n - 1] == ' ' || s[n - 1] == '\n')
+			n--;
+		i--;
+		while (++i <= n - 1)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		str[j + 1] = '\0';
+	}
+	else
+	{
+		free(str);
+		return (0);
 	}
 	return (str);
 }

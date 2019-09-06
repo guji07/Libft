@@ -1,6 +1,7 @@
 SRCS = srcs/*.c
 NAME = libft.a
 OBJECTS = *.o
+
 HEADER = libft.h
 all: $(NAME)
 $(NAME):

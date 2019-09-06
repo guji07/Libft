@@ -16,21 +16,26 @@ char	*ft_strstr(const char *str, const char *to_find)
 {
 	int		i;
 	int		n;
+	int 	j;
 
 	if ((*to_find) == '\0')
 		return (char *)(str);
-	i = -1;
-	while (str[++i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
+		j = i;
 		n = 0;
-		if (str[i] == to_find[n])
+		if (str[j] == to_find[n])
 		{
 			while (to_find[n])
-				if (to_find[++n] != str[++i])
+				if (to_find[++n] != str[++j])
+				{
 					break ;
+				}
 			if (to_find[n] == '\0')
-				return (char*)(str + i - n);
+				return (char*)(str + j - n);
 		}
+		i++;
 	}
 	return (0);
 }

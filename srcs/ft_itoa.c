@@ -12,6 +12,29 @@
 
 #include "../libft.h"
 
+static 	int 	ft_intlen(int n)
+{
+	int 	i;
+
+	if (n >= 0)
+	{
+		i = 1;
+		while ((n /= 10) > 0)
+			i++;
+		return (i);
+	}
+	else if (n == 0)
+		return (1);
+	else
+	{
+		n = n * (-1);
+		i = 2;
+		while ((n /= 10) > 0)
+			i++;
+		return (i);
+	}
+}
+
 static	void	ft_positive(char *str, int n)
 {
 	int	i;
@@ -40,10 +63,10 @@ char			*ft_itoa(int n)
 {
 	char *str;
 
-	if ((str = (char*)malloc(12)))
+	if ((str = (char*)malloc(ft_intlen(n) + 1)))
 	{
 		if (n == -2147483648)
-			str = "-2147483648";
+			ft_strcpy(str, "-2147483648");
 		else if (n < 0)
 		{
 			str[0] = '-';
@@ -53,7 +76,5 @@ char			*ft_itoa(int n)
 		else
 			ft_positive(str, n);
 	}
-	else
-		return 0;
 	return (str);
 }
