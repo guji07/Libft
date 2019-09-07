@@ -12,6 +12,12 @@
 
 #include "../libft.h"
 
+static	void	ft_v(char *arr, int *i)
+{
+	*arr = '\0';
+	(*i)--;
+}
+
 static	int		ft_words_count(const char *s, char c)
 {
 	int		i;
@@ -29,7 +35,7 @@ static	int		ft_words_count(const char *s, char c)
 	return (n);
 }
 
-static	int		ft_word_len(const char *s, char c)
+static	int		fwl(const char *s, char c)
 {
 	int		i;
 
@@ -46,27 +52,24 @@ char			**ft_strsplit(char const *s, char c)
 	int		j;
 	int		n;
 
-	if (!(arr = (char**)malloc(sizeof(char*) * ft_words_count((char*)s, c) + 1)))
+	if ((arr = (char**)malloc(sizeof(char*) * ft_words_count((char*)s, c) + 1)))
 	{
-		free(arr);
-		return (NULL);
+		i = -1;
+		j = -1;
+		while (s[++i] != '\0')
+			if (s[i] == c || (i == 0 && s[i] != c))
+			{
+				while (s[i] == c)
+					i++;
+				if (s[i + 1 + (n = -1)] != '\0')
+				{
+					arr[++j] = (char *)malloc((fwl(s + i, c) + 1));
+					while (s[i] != c && s[i] != '\0')
+						arr[j][++n] = s[i++];
+					ft_v(&(arr[j][++n]), &i);
+				}
+			}
+		arr[j + 1] = (char *)('\0');
 	}
-	i = -1;
-	j = -1;
-	while (s[++i] != '\0')
-	{
-		if (s[i] == c || (i == 0 && s[i] != c))
-		{
-			while (s[i] == c)
-				i++;
-			arr[++j] = (char*)malloc(sizeof(char) * ft_word_len(s + i, c));
-			n = -1;
-			while (s[i] != c && s[i] != '\0')
-				arr[j][++n] = s[i++];
-			arr[j][++n] = '\0';
-			i--;
-		}
-	}
-	arr[++j] = (char *)('\0');
 	return (arr);
 }

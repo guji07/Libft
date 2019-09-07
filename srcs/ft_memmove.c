@@ -12,23 +12,23 @@
 
 #include "../libft.h"
 
-void	*ft_memmove(void *destination, const void *source, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	int 	i;
+	int		i;
 
 	i = -1;
-	if (source > destination)
+	if (n == 0)
+		return (dst);
+	if (src > dst)
 	{
-		while (++i <(int)n)
-			((char*)destination)[i] = ((char*)source)[i];
-		((char*)destination)[i] = '\0';
+		while (++i < (int)n - 1)
+			((char*)dst)[i] = ((char*)src)[i];
 	}
-	else if (source < destination)
+	if (src < dst)
 	{
 		i = n;
 		while (--i >= 0)
-			((char*)destination)[i] = ((char*)source)[i];
-		((char*)destination)[n] = '\0';
+			((char*) dst)[i] = ((char *) src)[i];
 	}
-	return (destination);
+	return (dst);
 }

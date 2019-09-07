@@ -12,11 +12,11 @@
 
 #include "../libft.h"
 
-int		ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
-	int		z;
-	int		sum;
-	int 	n;
+	int						z;
+	signed long long int	sum;
+	int						n;
 
 	n = 1;
 	z = 1;
@@ -31,7 +31,11 @@ int		ft_atoi(const char *str)
 	while ((*str >= '0') && (*str <= '9'))
 	{
 		sum = (sum * 10) + (*str - '0');
+		if (sum < 0 && z < 0)
+			return (0);
+		if (sum < 0 && z == 1)
+			return (-1);
 		str++;
 	}
-	return (z * sum);
+	return (int)(z * sum);
 }

@@ -16,7 +16,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 {
 	int		i;
 	int		n;
-	int 	j;
+	int		j;
 
 	if ((*to_find) == '\0')
 		return (char *)(str);
@@ -27,11 +27,11 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 		n = 0;
 		if (str[j] == to_find[n])
 		{
-			while (to_find[n] && j < (int) len)
+			while (to_find[n] && j < (int)len)
 				if (to_find[++n] != str[++j])
-					break;
+					break ;
 			if (to_find[n] == '\0')
-				return (char *) (str + j - n);
+				return (char *)(str + j - n);
 		}
 	}
 	return (0);

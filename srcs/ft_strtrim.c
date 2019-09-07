@@ -22,22 +22,16 @@ char	*ft_strtrim(char const *s)
 	j = 0;
 	i = 0;
 	n = ft_strlen(s);
-	if (!s)
-		return (0);
-	str = (char*)malloc(n + 1);
-	if (str)
+	while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
+		i++;
+	while (s[n - 1] == '\t' || s[n - 1] == ' ' || s[n - 1] == '\n')
+		n--;
+	if (i == ft_strlen(s) &&  *s)
+		return ("");
+	if ((str = (char*)malloc(n - i + 1)))
 	{
-		while (s[i] == '\t' || s[i] == ' ' || s[i] == '\n')
-			i++;
-		while (s[n - 1] == '\t' || s[n - 1] == ' ' || s[n - 1] == '\n')
-			n--;
-		i--;
-		while (++i <= n - 1)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		str[j + 1] = '\0';
+		ft_strncpy(str, s + i, n - i);
+		str[n - i] = '\0';
 	}
 	else
 	{

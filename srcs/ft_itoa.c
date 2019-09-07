@@ -12,9 +12,9 @@
 
 #include "../libft.h"
 
-static 	int 	ft_intlen(int n)
+static		int	ft_intlen(int n)
 {
-	int 	i;
+	int		i;
 
 	if (n >= 0)
 	{
