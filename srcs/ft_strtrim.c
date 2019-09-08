@@ -26,17 +26,17 @@ char	*ft_strtrim(char const *s)
 		i++;
 	while (s[n - 1] == '\t' || s[n - 1] == ' ' || s[n - 1] == '\n')
 		n--;
-	if (i == ft_strlen(s) &&  *s)
+	if (i == ft_strlen(s) && *s)
 		return ("");
-	if ((str = (char*)malloc(n - i + 1)))
+	if ((str = (char *) malloc(n - i + 1)))
 	{
 		ft_strncpy(str, s + i, n - i);
 		str[n - i] = '\0';
-	}
-	else
+	} else
 	{
 		free(str);
 		return (0);
 	}
+
 	return (str);
 }

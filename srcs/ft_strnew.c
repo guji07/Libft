@@ -27,7 +27,5 @@ char	*ft_strnew(size_t size)
 		}
 		return (str);
 	}
-	else
-		free(str);
 	return (NULL);
 }
