@@ -32,7 +32,8 @@ char	*ft_strtrim(char const *s)
 	{
 		ft_strncpy(str, s + i, n - i);
 		str[n - i] = '\0';
-	} else
+	}
+	else
 	{
 		free(str);
 		return (0);

@@ -20,13 +20,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = -1;
 	j = -1;
-	if ((str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	str = NULL;
+	if (s1 && s2)
 	{
-		while (s1[++i])
-			str[i] = s1[i];
-		while (s2[++j])
-			str[i++] = s2[j];
-		str[i] = '\0';
+		if ((str = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+		{
+			while (s1[++i])
+				str[i] = s1[i];
+			while (s2[++j])
+				str[i++] = s2[j];
+			str[i] = '\0';
+		}
 	}
 	return (str);
 }
