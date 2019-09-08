@@ -19,7 +19,7 @@ NAME = libft.a
 HEADER = libft.h
 all: $(NAME)
 $(NAME):
-	gcc  -I $(HEADER) -Wall -Wextra -Werror -c $(addprefix srcs/, $(SRCS))
+	gcc  -I $(HEADER) -Wall -Wextra -Werror -c $(SRCS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 clean:
