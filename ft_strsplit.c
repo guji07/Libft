@@ -18,7 +18,7 @@ static	void	ft_v(char *arr, int *i)
 	(*i)--;
 }
 
-static	int		ft_words_count(const char *s, char c)
+static	int		ft_words_num(const char *s, char c)
 {
 	int		i;
 	int		n;
@@ -35,7 +35,7 @@ static	int		ft_words_count(const char *s, char c)
 	return (n);
 }
 
-static	int		fwl(const char *s, char c)
+static	int		ft_word_len(const char *s, char c)
 {
 	int		i;
 
@@ -52,24 +52,25 @@ char			**ft_strsplit(char const *s, char c)
 	int		j;
 	int		n;
 
-	if ((arr = (char**)malloc(sizeof(char*) * ft_words_count((char*)s, c) + 1)))
-	{
-		i = -1;
-		j = -1;
-		while (s[++i] != '\0')
-			if (s[i] == c || (i == 0 && s[i] != c))
-			{
-				while (s[i] == c)
-					i++;
-				if (s[i + 1 + (n = -1)] != '\0')
+	if ((arr = 0) || s)
+		if ((arr = (char**)malloc(sizeof(char*) * ft_words_num((char*)s, c) + 1)))
+		{
+			i = -1;
+			j = -1;
+			while (s[++i] != '\0')
+				if (s[i] == c || (i == 0 && s[i] != c))
 				{
-					arr[++j] = (char *)malloc((fwl(s + i, c) + 1));
-					while (s[i] != c && s[i] != '\0')
-						arr[j][++n] = s[i++];
-					ft_v(&(arr[j][++n]), &i);
+					while (s[i] == c)
+						i++;
+					if (s[i + 1 + (n = -1)] != '\0')
+					{
+						arr[++j] = (char *)ft_memalloc((ft_word_len(s + i, c) + 1));
+						while (s[i] != c && s[i] != '\0')
+							arr[j][++n] = s[i++];
+						ft_v(&(arr[j][++n]), &i);
+					}
 				}
-			}
-		arr[j + 1] = (char*)('\0');
-	}
+				arr[j + 1] = (char*)('\0');
+		}
 	return (arr);
 }
