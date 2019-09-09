@@ -6,7 +6,7 @@
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 14:00:54 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/09/08 18:19:14 by tgarkbit         ###   ########.fr       */
+/*   Updated: 2019/09/09 16:26:05 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	void	ft_v(char *arr, int *i)
 	(*i)--;
 }
 
-static	int		ft_words_num(const char *s, char c)
+static	int		ft_wc(const char *s, char c)
 {
 	int		i;
 	int		n;
@@ -35,7 +35,7 @@ static	int		ft_words_num(const char *s, char c)
 	return (n);
 }
 
-static	int		ft_word_len(const char *s, char c)
+static	int		fwl(const char *s, char c)
 {
 	int		i;
 
@@ -52,25 +52,24 @@ char			**ft_strsplit(char const *s, char c)
 	int		j;
 	int		n;
 
-	if ((arr = 0) || s)
-		if ((arr = (char**)malloc(sizeof(char*) * ft_words_num((char*)s, c) + 1)))
-		{
-			i = -1;
-			j = -1;
-			while (s[++i] != '\0')
-				if (s[i] == c || (i == 0 && s[i] != c))
+	if ((arr = (char**)malloc(sizeof(char*) * ft_wc((char*)s, c) + 1)) && s)
+	{
+		i = -1;
+		j = -1;
+		while (s[++i] != '\0')
+			if (s[i] == c || (i == 0 && s[i] != c))
+			{
+				while (s[i] == c)
+					i++;
+				if (s[i + 1 + (n = -1)] != '\0')
 				{
-					while (s[i] == c)
-						i++;
-					if (s[i + 1 + (n = -1)] != '\0')
-					{
-						arr[++j] = (char *)ft_memalloc((ft_word_len(s + i, c) + 1));
-						while (s[i] != c && s[i] != '\0')
-							arr[j][++n] = s[i++];
-						ft_v(&(arr[j][++n]), &i);
-					}
+					arr[++j] = (char *)malloc((fwl(s + i, c) + 1));
+					while (s[i] != c && s[i] != '\0')
+						arr[j][++n] = s[i++];
+					ft_v(&(arr[j][++n]), &i);
 				}
-				arr[j + 1] = (char*)('\0');
-		}
-	return (arr);
+			}
+		arr[j + 1] = (char*)('\0');
+	}
+	return (((s) ? arr : NULL));
 }
