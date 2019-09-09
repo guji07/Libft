@@ -29,14 +29,12 @@ char	*ft_strtrim(char const *s)
 		while (n >= 0 && (s[n - 1] == '\t' || s[n - 1] == ' ' || s[n - 1] == '\n'))
 			n--;
 		if (i == ft_strlen(s) && *s)
-			return ("");
-		if ((str = (char*)malloc(n - i + 1)))
+			return (0);
+		if ((str = (char*)ft_memalloc(n - i + 1)))
 		{
 			ft_strncpy(str, s + i, n - i);
-			str[n - i] = '\0';
 			return (str);
 		}
-		str = NULL;
 	}
 	return (NULL);
 }

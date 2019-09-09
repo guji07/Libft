@@ -14,19 +14,15 @@
 
 int		ft_memcmp(const void *buf1, const void *buf2, size_t count)
 {
-	long	long i;
+	long	long	i;
 
-	i = -1;
-	if (buf1 || buf2)
+	i = 0;
+	if (count)
 	{
-		while (++i != (long long)(count - 2))
-		{
-			if (((unsigned char *)buf1)[i])
-				if (((unsigned char*)buf1)[i] != ((unsigned char*)buf2)[i])
-					return (((unsigned char*)buf1)[i] -
-					((unsigned char*)buf2)[i]);
-		}
-		return ((((unsigned char*)buf1)[i] - ((unsigned char*)buf2)[i]));
+		while (((size_t)i < count - 1 &&
+		(((unsigned char*)buf1)[i]) == (((unsigned char*)buf2)[i])))
+			i++;
+		return (((unsigned char*)buf1)[i] - ((unsigned char*)buf2)[i]);
 	}
 	return (0);
 }

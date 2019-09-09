@@ -21,5 +21,4 @@ void	ft_putstr_fd(char const *s, int fd)
 	{
 		ft_putchar_fd(s[i], fd);
 	}
-	ft_putchar_fd('\0', fd);
 }
