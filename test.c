@@ -3,7 +3,6 @@
 
 int		main(void)
 {
-	printf("ft_strtrim: [%s]", ft_strtrim(" 12323"));
-	printf("   strtrim: [%s]", strtrim(" 12323"));
+	printf("ft_strtrim");
 	return (0);
 }

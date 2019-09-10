@@ -19,8 +19,9 @@
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *source, int ch, size_t count);
-void	*ft_memmove(void *destination, const void *source, size_t n);
+void	*ft_memccpy(void *dest, const void *source,
+		int ch, size_t count);
+void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memchr(const void *arr, int c, size_t n);
 int		ft_memcmp(const void *buf1, const void *buf2, size_t count);
 int		ft_strlen(const char *str);
@@ -29,7 +30,7 @@ char	*ft_strcpy(char *destptr, const char *srcptr);
 char	*ft_strncpy(char *destptr, const char *srcptr, size_t num);
 char	*ft_strcat(char *str1, const char *str2);
 char	*ft_strncat(char *str1, const char *str2, size_t count);
-size_t	ft_strlcat(char *dst, char *src, size_t count);
+size_t	ft_strlcat(char *dst, const char *src, size_t count);
 char	*ft_strchr(const char *string, int symbol);
 char	*ft_strrchr(const char *string, int symbol);
 char	*ft_strstr(const char *str, const char *to_find);
