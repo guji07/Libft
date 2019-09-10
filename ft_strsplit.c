@@ -2,7 +2,23 @@
 
 static 	int 		ft_wn(char *s, char c)
 {
+	int 	i;
+	int 	n;
 
+	n = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			while (s[i] && s[i] == c)
+				i++;
+			n++;
+		}
+		else
+			i++;
+	}
+	return (n + 2);
 }
 
 static	int			ft_wordlen(char *s, char c)
@@ -50,7 +66,7 @@ char				**ft_strsplit(const char *s, char c)
 	char **ar;
 
 	if (c =='\0')
-	return ((char**)ft_memalloc(1));
+		return ((char**)ft_memalloc(1));
 	if (!s)
 		return (NULL);
 	if ((ar = (char**)ft_memalloc(sizeof(char**) * ft_wn((char*)s, c))))
