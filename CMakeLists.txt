@@ -4,4 +4,4 @@ file (GLOB srcs
         "*.c")
 set(CMAKE_C_STANDARD 90)
 
-add_executable(libft libft.h ${srcs})
+add_executable(libft libft.h ${srcs} ft_lstadd.c ft_lstiter.c ft_lstmap.c)

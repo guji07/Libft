@@ -18,11 +18,11 @@ OBJECTS =   ft_atoi.o       ft_isascii.o    ft_memalloc.o   ft_memcpy.o     ft_p
 NAME = libft.a
 all: $(NAME)
 $(NAME):
-	@gcc  -I libft.h -Wall -Wextra -Werror -c $(SRCS)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
+	gcc -I -Wall -Wextra -Werror -c $(SRCS)
+	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
 clean:
-	@rm -f $(OBJECTS)
+	rm -f $(OBJECTS)
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 re:	fclean all
