@@ -1,75 +1,85 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 14:00:54 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/09/09 16:26:05 by tgarkbit         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static	void	ft_v(char *arr, int *i)
+static 	int 		ft_wn(char *s, char c)
 {
-	*arr = '\0';
-	(*i)--;
-}
+	int 	i;
+	int 	n;
 
-static	int		ft_wc(const char *s, char c)
-{
-	int		i;
-	int		n;
-
-	n = 1;
-	i = -1;
-	while (s[++i])
+	n = 0;
+	i = 0;
+	while (s[i])
+	{
 		if (s[i] == c)
 		{
-			n++;
-			while (s[i] == c && s[i])
+			while (s[i] && s[i] == c)
 				i++;
+			n++;
 		}
-	return (n);
+		else
+			i++;
+	}
+	return (n + 2);
 }
 
-static	int		fwl(const char *s, char c)
+static	int			ft_wordlen(char *s, char c)
 {
-	int		i;
+	int i;
 
 	i = 0;
-	while (s[i] == c && s[i])
+	while (s[i] && s[i] != c)
 		i++;
 	return (i);
 }
 
-char			**ft_strsplit(char const *s, char c)
+static	void		ft_free_ar(int n, char **ar)
+{
+	int j;
+
+	j = n;
+	while (j >= 0)
+	{
+		free(ar[j]);
+		ft_bzero(ar[j], ft_strlen(ar[j]));
+		j--;
+		free(ar);
+	}
+	return ;
+}
+
+static	char		*ft_crnw(char *s, char **ar, int num, char c)
+{
+	int n;
+	char *dest;
+
+	n = ft_wordlen(s, c);
+	if ((dest = (char*)ft_memalloc(n + 1)))
+		ft_strncpy(dest, s, n);
+	else
+		ft_free_ar(num, ar);
+	return (dest);
+}
+
+char				**ft_strsplit(const char *s, char c)
 {
 	int		i;
-	char	**arr;
 	int		j;
-	int		n;
+	char **ar;
 
-	if ((arr = (char**)malloc(sizeof(char*) * ft_wc((char*)s, c) + 1)) && s)
+	if (c =='\0')
+	return ((char**)ft_memalloc(1));
+	if (!s)
+		return (NULL);
+	if ((ar = (char**)ft_memalloc(sizeof(char**) * ft_wn((char*)s, c))))
 	{
-		i = -1;
 		j = -1;
-		while (s[++i] != '\0')
-			if (s[i] == c || (i == 0 && s[i] != c))
+		i = -1;
+		while (s[++i])
+			if (s[i] != c)
 			{
-				while (s[i] == c)
-					i++;
-				if (s[i + 1 + (n = -1)] != '\0')
-				{
-					arr[++j] = (char *)malloc((fwl(s + i, c) + 1));
-					while (s[i] != c && s[i] != '\0')
-						arr[j][++n] = s[i++];
-					ft_v(&(arr[j][++n]), &i);
-				}
+				j++;
+				ar[j] = ft_crnw((char*)s + i, ar, j, c);
+				i += (ft_strlen(ar[j]) - 1);
 			}
-		arr[j + 1] = (char*)('\0');
 	}
-	return (((s) ? arr : NULL));
+	return	(ar);
 }
