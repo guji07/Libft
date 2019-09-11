@@ -6,7 +6,7 @@
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 14:11:26 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/09/04 14:11:59 by tgarkbit         ###   ########.fr       */
+/*   Updated: 2019/09/11 12:02:46 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char			*ft_strtrim(char const *s)
 		while (n >= 0 && (s[n - 1] == '\t' ||
 		s[n - 1] == ' ' || s[n - 1] == '\n'))
 			n--;
-		if (i == ft_strlen(s) && *s)
+		if ((size_t)i == ft_strlen(s) && *s)
 			return (ft_createzero());
 		if ((str = (char*)ft_memalloc(n - i + 1)))
 		{

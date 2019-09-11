@@ -16,6 +16,8 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	int i;
 
+	if (n == 0)
+		return (1);
 	if (s1 && s2)
 	{
 		if (*s1 == '\0' && *s2 == '\0')

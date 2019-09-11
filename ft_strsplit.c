@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/11 11:58:34 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/11 11:58:36 by tgarkbit         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static 	int 		ft_wn(char *s, char c)
+static	int			ft_wn(char *s, char c)
 {
-	int 	i;
-	int 	n;
+	int		i;
+	int		n;
 
 	n = 0;
 	i = 0;
@@ -23,7 +35,7 @@ static 	int 		ft_wn(char *s, char c)
 
 static	int			ft_wordlen(char *s, char c)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -48,8 +60,8 @@ static	void		ft_free_ar(int n, char **ar)
 
 static	char		*ft_crnw(char *s, char **ar, int num, char c)
 {
-	int n;
-	char *dest;
+	int		n;
+	char	*dest;
 
 	n = ft_wordlen(s, c);
 	if ((dest = (char*)ft_memalloc(n + 1)))
@@ -63,10 +75,10 @@ char				**ft_strsplit(const char *s, char c)
 {
 	int		i;
 	int		j;
-	char **ar;
+	char	**ar;
 
-	if (c =='\0')
-	return ((char**)ft_memalloc(1));
+	if (c == '\0')
+		return ((char**)ft_memalloc(1));
 	if (!s)
 		return (NULL);
 	if ((ar = (char**)ft_memalloc(sizeof(char**) * ft_wn((char*)s, c))))
@@ -78,8 +90,8 @@ char				**ft_strsplit(const char *s, char c)
 			{
 				j++;
 				ar[j] = ft_crnw((char*)s + i, ar, j, c);
-				i += (ft_strlen(ar[j]) - 1);
+				i = i + (ft_strlen(ar[j]) - 1);
 			}
 	}
-	return	(ar);
+	return (ar);
 }

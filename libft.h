@@ -6,7 +6,7 @@
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:48:38 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/09/11 10:37:40 by tgarkbit         ###   ########.fr       */
+/*   Updated: 2019/09/11 12:39:27 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void				*ft_memccpy(void *dest, const void *source,
 void				*ft_memmove(void *dst, const void *src, size_t n);
 void				*ft_memchr(const void *arr, int c, size_t n);
 int					ft_memcmp(const void *buf1, const void *buf2, size_t count);
-int					ft_strlen(const char *str);
+size_t				ft_strlen(const char *str);
 char				*ft_strdup(const char *str);
 char				*ft_strcpy(char *destptr, const char *srcptr);
 char				*ft_strncpy(char *destptr, const char *srcptr, size_t num);
@@ -40,7 +40,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t count);
 char				*ft_strchr(const char *string, int symbol);
 char				*ft_strrchr(const char *string, int symbol);
 char				*ft_strstr(const char *str, const char *to_find);
-char				*ft_strnstr (char *str, char *to_find, size_t len);
+char				*ft_strnstr(const char *str,
+			const char *to_find, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
@@ -81,7 +82,7 @@ t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
-
+void				ft_lstiter(t_list *lst, void (*f)(t_list
+			*elem));
 #endif
