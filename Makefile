@@ -18,12 +18,20 @@ OBJECTS =   ft_atoi.o       ft_isascii.o    ft_memalloc.o   ft_memcpy.o     ft_p
             ft_strnew.o     ft_strstr.o     ft_toupper.o    ft_lstdelone.o  ft_lstnew.o     ft_lstdel.o		ft_lstadd.o  \
 			ft_lstiter.o    ft_lstmap.o
 NAME = libft.a
+<<<<<<< HEAD
+all: $(NAME)
+$(NAME):
+	gcc -I -Wall -Wextra -Werror -c $(SRCS)
+	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
+=======
 HEADER = libft.h
 all: $(NAME)
 $(NAME):
 	@gcc  -I $(HEADER) -Wall -Wextra -Werror -c $(SRCS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
+>>>>>>> 2f0d34acee8958ac9c00a22aab6aa688bb5324dc
 clean:
 	@rm -f $(OBJECTS)
 fclean: clean
