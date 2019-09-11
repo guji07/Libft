@@ -16,10 +16,7 @@ int					ft_atoi(const char *str)
 {
 	int						z;
 	signed long long int	sum;
-<<<<<<< HEAD:ft_atoi.c
-=======
 	int						n;
->>>>>>> 2f0d34acee8958ac9c00a22aab6aa688bb5324dc:ft_atoi.c
 
 	n = 1;
 	z = 1;
