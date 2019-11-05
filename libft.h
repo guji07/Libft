@@ -6,7 +6,7 @@
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:48:38 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/09/11 12:39:27 by tgarkbit         ###   ########.fr       */
+/*   Updated: 2019/11/01 14:49:28 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# define BUFF_SIZE 55
 
 typedef	struct		s_list
 {
@@ -85,4 +86,10 @@ void				ft_lstadd(t_list **alst, t_list *new);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
 void				ft_lstiter(t_list *lst, void (*f)(t_list
 			*elem));
+
+int					ft_max(int a, int b);
+int					get_next_line(const int fd, char **line);
+long	double		ft_pow(long double num, int power);
+void				ft_putupstr(char *s);
+void				ft_putnstr(char *str, size_t n);
 #endif
