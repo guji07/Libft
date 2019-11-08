@@ -78,7 +78,8 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-
+char				*ft_strcatspace(char *str1, const char *str2);
+void				ft_swapint(int *a, int *b);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -92,4 +93,6 @@ int					get_next_line(const int fd, char **line);
 long	double		ft_pow(long double num, int power);
 void				ft_putupstr(char *s);
 void				ft_putnstr(char *str, size_t n);
+void				ft_die(char *str);
+int 				*ft_intmalloc(int len);
 #endif
