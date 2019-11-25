@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swapint.c                                       :+:      :+:    :+:   */
+/*   ft_free_ar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/19 18:00:12 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/11/19 18:00:13 by tgarkbit         ###   ########.fr       */
+/*   Created: 2019/11/19 18:00:48 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/11/19 18:00:49 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swapint(int *a, int *b)
+void		ft_free_ar(int n, char **ar)
 {
-	int		c;
+	int j;
 
-	c = *a;
-	*a = *b;
-	*b = c;
+	j = n;
+	while (j >= 0)
+	{
+		free(ar[j]);
+		j--;
+	}
+	free(ar);
 	return ;
 }

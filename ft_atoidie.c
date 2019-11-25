@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoidie.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 16:00:51 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/09/11 10:52:40 by tgarkbit         ###   ########.fr       */
+/*   Created: 2019/11/19 18:01:15 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/11/19 18:01:51 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-int					ft_atoi(const char *str)
+int					ft_atoidie(const char *str)
 {
-	int						z;
-	signed long long int	sum;
+	int							z;
+	long long int				sum;
 
 	z = 1;
 	sum = 0;
@@ -30,9 +31,11 @@ int					ft_atoi(const char *str)
 	{
 		sum = (sum * 10) + (*str - '0');
 		if (sum < 0 && z < 0)
-			return (0);
+			ft_die("Error\n");
 		if (sum < 0 && z == 1)
-			return (-1);
+			ft_die("Error\n");
+		if (sum > (z ? INT_MAX : 2147483648))
+			ft_die("Error\n");
 		str++;
 	}
 	return (int)(z * sum);

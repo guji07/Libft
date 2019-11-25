@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   flag_x2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,28 +12,40 @@
 
 #include "libft.h"
 
-int					ft_atoi(const char *str)
+void				ft_costylleft(t_format form)
 {
-	int						z;
-	signed long long int	sum;
+	int		width;
+	int		precision;
 
-	z = 1;
-	sum = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' ||
-	*str == '\v' || *str == '\a' || *str == '\r')
-		str++;
-	if (*str == '-')
-		z = -1;
-	if (*str == '+' || *str == '-')
-		str++;
-	while ((*str >= '0') && (*str <= '9'))
+	precision = form.precision;
+	width = form.width - precision;
+	while (precision > 0)
 	{
-		sum = (sum * 10) + (*str - '0');
-		if (sum < 0 && z < 0)
-			return (0);
-		if (sum < 0 && z == 1)
-			return (-1);
-		str++;
+		precision--;
+		ft_write("0", 1);
 	}
-	return (int)(z * sum);
+	while (width > 0)
+	{
+		ft_write(" ", 1);
+		width--;
+	}
+}
+
+void				ft_costylright(t_format form)
+{
+	int		width;
+	int		precision;
+
+	precision = form.precision;
+	width = form.width - precision;
+	while (width > 0)
+	{
+		ft_write(" ", 1);
+		width--;
+	}
+	while (precision > 0)
+	{
+		precision--;
+		ft_write("0", 1);
+	}
 }

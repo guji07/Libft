@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swapint.c                                       :+:      :+:    :+:   */
+/*   ft_unsignedintlen.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/19 18:00:12 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/11/19 18:00:13 by tgarkbit         ###   ########.fr       */
+/*   Created: 2019/11/05 16:00:51 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/11/05 10:52:40 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_swapint(int *a, int *b)
+int			ft_unsignedintlen(unsigned long long int num)
 {
-	int		c;
+	int						i;
+	signed long long int	base;
 
-	c = *a;
-	*a = *b;
-	*b = c;
-	return ;
+	i = 19;
+	base = 1000000000000000000;
+	if (num == 0)
+		return (1);
+	while (42)
+	{
+		if (num / base)
+			return (i);
+		base /= 10;
+		i--;
+	}
 }

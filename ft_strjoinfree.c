@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swapint.c                                       :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgarkbit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/19 18:00:12 by tgarkbit          #+#    #+#             */
-/*   Updated: 2019/11/19 18:00:13 by tgarkbit         ###   ########.fr       */
+/*   Created: 2019/07/08 16:00:51 by tgarkbit          #+#    #+#             */
+/*   Updated: 2019/09/11 10:52:40 by tgarkbit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swapint(int *a, int *b)
+char		*ft_strjoinfree(char const *s1, char const *s2)
 {
-	int		c;
+	int		j;
+	char	*str;
+	int		i;
 
-	c = *a;
-	*a = *b;
-	*b = c;
-	return ;
+	i = -1;
+	j = -1;
+	str = NULL;
+	if (s1 && s2)
+	{
+		if ((str = (char*)ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+		{
+			while (s1[++i])
+				str[i] = s1[i];
+			while (s2[++j])
+				str[i++] = s2[j];
+			str[i] = '\0';
+		}
+	}
+	free((void*)s1);
+	return (str);
 }
