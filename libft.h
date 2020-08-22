@@ -44,7 +44,9 @@ typedef struct		s_format
 	int				width;
 	int				precision;
 }					t_format;
-
+/*
+** base lift functions
+*/
 int					ft_atoi(const char *str);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -111,6 +113,10 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f) (t_list *elem));
 void				ft_lstiter(t_list *lst, void (*f)(t_list
 			*elem));
 
+/*
+** bonus functions
+*/
+
 int					ft_max(int a, int b);
 int					get_next_line(const int fd, char **line);
 long	double		ft_pow(long double num, int power);
@@ -126,9 +132,13 @@ void				ft_write(char *s, int len);
 void				ft_putnstr(char *str, size_t n);
 void				ft_memswap(char *s1, char *s2);
 char				*ft_itoabaseunsigned(unsigned long long num,
-		char *str, int base);
+							 char *str, int base);
 void				reverse(char str[], int length);
 void				ft_putupstr(char *s);
+
+/*
+** ft_printf functions
+*/
 
 int					ft_printf(char *format, ...);
 int					ft_format(char *ss, va_list ap);
@@ -144,13 +154,13 @@ void				ft_flagint(long long num, char *ss);
 int					ft_intlen(long long int num);
 void				ft_intleft(long long num, t_format form);
 void				ft_intright(long long num, t_format form);
-void				ft_octet(char *ss, va_list ap);
-void				ft_ptet(char *ss, va_list ap);
 void				ft_unsignedint(char *ss, va_list ap);
 void				ft_flagunsignedint(unsigned long long num, char *ss);
 void				ft_unsignedintright(unsigned long long num, t_format form);
 void				ft_unsignedintleft(unsigned long long num, t_format form);
 int					ft_unsignedintlen(unsigned long long int num);
+void				ft_octet(char *ss, va_list ap);
+void				ft_ptet(char *ss, va_list ap);
 void				ft_flagstr(char *str, char *ss);
 void				ft_flagpercent(char *ss);
 void				ft_flagchar(char *ss, char c);
@@ -160,11 +170,11 @@ void				ft_flagxtet(unsigned long long num, char *ss, int mode);
 void				ft_xtet(char *ss, va_list ap, int mode);
 void				ft_costylleft(t_format form);
 void				ft_costylright(t_format form);
-void				ft_double(char *ss, long double num);
-char				*ft_k3(long double *num, t_format form);
-double				ft_okrug(int i);
-void				ft_putfloatright(char *ss, char *num, t_format form);
-void				ft_k2(t_format form, char *num, char *ss);
-void				ft_putfloatleft(char *ss, char *num, t_format form);
 void				ft_float(char *ss, va_list ap);
+void				ft_double(char *ss, long double num);
+double				ft_okrug(int i);
+void				ft_k2(t_format form, char *num, char *ss);
+char				*ft_k3(long double *num, t_format form);
+void				ft_putfloatleft(char *ss, char *num, t_format form);
+void				ft_putfloatright(char *ss, char *num, t_format form);
 #endif
